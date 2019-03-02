@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photo Album - Free Bulma template</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.4-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/instaAlbum.css">
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">Your Workouts</h1>
+            </div>
+        </div>
+    </section>
+
+    <nav class="navbar is-primary">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html" style="font-weight:bold;">
+                Home
+                </a>
+                <span class="navbar-burger burger" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+                </span>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="notification.html" class="navbar-item">Notification</a>
+                    <a href="nutrition.html" class="navbar-item">Nutrition</a>
+                    <a href="workout.html" class="navbar-item is-active">Workout</a>
+                    <a href="pdata.html" class="navbar-item">Account</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript">
+        (function() {
+            var burger = document.querySelector('.burger');
+            var nav = document.querySelector('#'+burger.dataset.target);
+            burger.addEventListener('click', function(){
+                burger.classList.toggle('is-active');
+                nav.classList.toggle('is-active');
+            });
+        })();
+    </script>
+
+    <div class="columns body-columns">
+        <div class="column is-half is-offset-one-quarter">
+            <div class="card">
+                <div class="header">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">Today</p>
+                            <p class="subtitle is-6">03/02/19</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="header">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">Yesterday</p>
+                            <p class="subtitle is-6">03/01/19</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <h3><string>Upperbody:</string></h3>
+                        <ul>
+                            <li>Reps:   </li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <div class="header">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">Past</p>
+                            <p class="subtitle is-6">02/28/19</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
