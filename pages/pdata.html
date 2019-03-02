@@ -5,6 +5,7 @@
         <title>Personal</title>
         <link rel='stylesheet' href='https://unpkg.com/bulma@0.7.4/css/bulma.min.css'>
         <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="stylesheet" href="kanban.css">
         <style>
         .column {
@@ -62,20 +63,67 @@
             })();
         </script>
 
-        <div class="columns">
-            <div class="column">
-            <h1 class="title is-2">Name</h1>
-            <p class="subtitle is-5 has-text-grey">1110</p>
-            <p class="subtitle is-5 has-text-grey">email@email.com</p>
-            </div>
-            <div class="column">
-            <h1 class="title is-3">Height:</h1>
-            <p class="subtitle is-5">200cm</p>
-            <h1 class="title is-3">Weight:</h1>
-            <p class="subtitle is-5">70kg</p>
-            <h1 class="title is-3">Gender</h1>
-            <p class="subtitle is-5">Male</p>
-            </div>
+        <div class="box">
+            <form>
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Joe">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="JJ1">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="jj@joe.com">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope-open"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Height</label>
+                    <div class="control">
+                        <input class="input" type="number" placeholder="cm">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Weight</label>
+                    <div class="control">
+                        <input class="input" type="number" placeholder="kg">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Sex</label>
+                    <div class="control">
+                        <div class="select">
+                            <select>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-link">Save Changes</button>
+                    </div>
+                </div>
+            </form>
         </div>
 
 <div class="columns is-mobile is-centered">
