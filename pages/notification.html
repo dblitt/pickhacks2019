@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Notification</title>
+        <link rel='stylesheet' href='https://unpkg.com/bulma@0.7.4/css/bulma.min.css'>
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+        <link rel="stylesheet" href="kanban.css">
+        <style>
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+        .row:after {
+            content = "";
+            display: table;
+            clear: both;
+        }
+    </style>
+    </head>
+
+    <body>
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Notifications</h1>
+                </div>
+            </div>
+        </section>
+
+        <nav class="navbar is-primary">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="index.html" style="font-weight:bold;">
+                    Home
+                    </a>
+                    <span class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </span>
+                </div>
+                <div id="navMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="notification.html" class="navbar-item is-active">Notification</a>
+                        <a href="nutrition.html" class="navbar-item">Nutrition</a>
+                        <a href="workout.html" class="navbar-item">Workout</a>
+                        <a href="pdata.html" class="navbar-item">Account</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <script type="text/javascript">
+            (function() {
+                var burger = document.querySelector('.burger');
+                var nav = document.querySelector('#'+burger.dataset.target);
+                burger.addEventListener('click', function(){
+                    burger.classList.toggle('is-active');
+                    nav.classList.toggle('is-active');
+                });
+            })();
+        </script>
+
+        <section class="container">
+            <div class="level-item">
+            <div class="dual_column">
+                <div class="column">
+                    <h2>Today</h2>
+                        <div class="column is-narrow">
+                            <article class="message is-primary">
+                                <div class="message-header">
+                                    <p>Nutrition</p>
+                                    <button class="delete" aria-label="delete"></button>
+                                </div>
+                                <div class="message-body">
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                                Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet,
+                                                consectetur adipiscing elit
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                            </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                    <div class="column is-narrow">
+                        <article class="message is-link">
+                            <div class="message-header">
+                                <p>Workout</p>
+                                <button class="delete" aria-label="delete"></button>
+                            </div>
+                            <div class="message-body">
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                                <div class="board-item">
+                                    <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                    </div>
+                                </div>
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="column is-narrow">
+                        <article class="message is-info">
+                            <div class="message-header">
+                                <p>Info</p>
+                                <button class="delete" aria-label="delete"></button>
+                            </div>
+                            <div class="message-body">
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                                <div class="board-item">
+                                    <div class="notification">
+                                        <button class="delete"></button>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2>Yesterday</h2>
+                        <div class="column is-narrow">
+                            <article class="message is-primary">
+                                <div class="message-header">
+                                    <p>Nutrition</p>
+                                    <button class="delete" aria-label="delete"></button>
+                                </div>
+                                <div class="message-body">
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                            </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="column is-narrow">
+                            <article class="message is-link">
+                                <div class="message-header">
+                                    <p>Season 3</p>
+                                    <button class="delete" aria-label="delete"></button>
+                                </div>
+                                <div class="message-body">
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="column is-narrow">
+                            <article class="message is-info">
+                                <div class="message-header">
+                                    <p>Info</p>
+                                    <button class="delete" aria-label="delete"></button>
+                                </div>
+                                <div class="message-body">
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                    <div class="board-item">
+                                        <div class="notification">
+                                            <button class="delete"></button>
+                                            Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+<div class="columns is-mobile is-centered">
+<div class="column is-half is-narrow"></div>
+</div>
+<script src="../js/bulma.js"></script>
+</body>
+</html>
