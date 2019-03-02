@@ -48,8 +48,11 @@ const db = mongoose.connection;
 if (typeof process.env.NODE_ENV !== 'undefined' && process.env.NODE_ENV === 'production') {
   console.log('App started in production mode');
   // if a file/directory called 'logs' doesn't exist, create it
-  if (!fs.existsSync('./logs')) {
-    fs.mkdirSync('./logs');
+  // if (!fs.existsSync('./logs')) {
+  //   fs.mkdirSync('./logs');
+  // }
+  if (!fs.existsSync(path.join(__dirname, '/logs'))) {
+    fs.mkdirSync(path.join(__dirname, '/logs'));
   }
   // check if '/logs' is a file or directory
   fs.lstat(path.join(__dirname, '/logs'), (err, stats) => {
