@@ -1,0 +1,23 @@
+{
+  "name": "pickhacks2019",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dblitt99/pickhacks2019.git"
+  },
+  "keywords": [
+    "big-data",
+    "machine-learning"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dblitt99/pickhacks2019/issues"
+  },
+  "homepage": "https://github.com/dblitt99/pickhacks2019#readme"
+}
