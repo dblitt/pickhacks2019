@@ -51,7 +51,7 @@ def handle_prediction():
 
 @app.route('/get_net_changes')
 def serve_predictions():
-    response = jsonify(net_changes_predictions[0])
+    response = jsonify(net_changes_predictions)
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
