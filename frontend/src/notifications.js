@@ -51,31 +51,33 @@ class NotificationsPage extends Component {
 
     var self = this;
 
-    axios.get("http://localhost:80/get_net_changes").then(function(json) {
-      var netChanges = json.data;
-      console.log(netChanges);
-      var counter = 0;
-      var arrayOfNotifications = [];
-      for (var key in notificationLabels) {
-        var keyWord = netChanges[counter] < 0 ? "decrease" : "increase";
-        var change = Math.abs(netChanges[counter]);
+    axios
+      .get("https://ml.smarternotharder.tech/get_net_changes")
+      .then(function(json) {
+        var netChanges = json.data;
+        console.log(netChanges);
+        var counter = 0;
+        var arrayOfNotifications = [];
+        for (var key in notificationLabels) {
+          var keyWord = netChanges[counter] < 0 ? "decrease" : "increase";
+          var change = Math.abs(netChanges[counter]);
 
-        var notificationText = `You need to ${keyWord} ${
-          notificationLabels[key][0]
-        } by ${Math.round(change * 100) / 100} ${notificationLabels[key][1]}`;
+          var notificationText = `You need to ${keyWord} ${
+            notificationLabels[key][0]
+          } by ${Math.round(change * 100) / 100} ${notificationLabels[key][1]}`;
 
-        arrayOfNotifications.push(
-          <Notification notificationText={notificationText} key={counter} />
-        );
+          arrayOfNotifications.push(
+            <Notification notificationText={notificationText} key={counter} />
+          );
 
-        counter++;
-      }
+          counter++;
+        }
 
-      self.setState({
-        dataLoaded: true,
-        arrayOfNotifications: arrayOfNotifications
+        self.setState({
+          dataLoaded: true,
+          arrayOfNotifications: arrayOfNotifications
+        });
       });
-    });
   }
 
   render() {

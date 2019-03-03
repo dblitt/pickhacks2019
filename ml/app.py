@@ -21,12 +21,13 @@ number_of_features = 9
 @app.route('/predict_net_changes', methods=['POST'])
 def handle_prediction():
 
-    posted_checkin_data = request.get_json()
+    p_data = request.get_json()
     global target_lbm
-    target_lbm = posted_checkin_data['target_lbm']
+    target_lbm = p_data['target_lbm']
 
-    most_recent_checkin_data = [posted_checkin_data[key]
-                                for key in posted_checkin_data]
+    ["Max Weight Lifted (pounds)", "weightliftPound"],
+    most_recent_checkin_data = [p_data['sleepHours'], p_data['dairyServing'], p_data['workoutHour'], p_data['weightliftPount'],
+                                p_data['fruitServing'], p_data['veggieServing'], p_data['waterCup'], p_data['proteinGram'], p_data['target_lbm']]
 
     net_changes = fit_predict(most_recent_checkin_data)
 

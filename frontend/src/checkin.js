@@ -6,16 +6,18 @@ import $ from "jquery";
 import "fullcalendar";
 import "./fullcalendar.css";
 import Form from "./form.js";
+import axios from "axios";
 
 class CheckIn extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { isActive: false, isHidden: true };
+    this.state = { isActive: false, isHidden: true, formData: {} };
 
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleDayClick(date, event, view) {
@@ -32,8 +34,28 @@ class CheckIn extends Component {
   }
 
   handleSubmit() {
+    axios
+      .post(
+        "https://ml.smarternotharder.tech/predict_net_changes",
+        this.state.formData
+      )
+      .then(res => {
+        console.log(res.data);
+      });
     this.setState({ isHidden: !this.state.isHidden });
     this.handleClose();
+  }
+
+  handleChange(event) {
+    var target = event.target;
+    var update = {
+      [target.name]: target.value
+    };
+
+    var formData = Object.assign(this.state.formData, update);
+
+    this.setState(Object.assign(this.state, formData));
+    console.log(this.state);
   }
 
   render() {
@@ -53,6 +75,7 @@ class CheckIn extends Component {
           isActive={this.state.isActive}
           closeFunction={this.handleClose}
           submitFunction={this.handleSubmit}
+          changeFunction={this.handleChange}
         />
       </div>
     );
@@ -83,7 +106,7 @@ class DayClickModal extends Component {
     ["Servings of Vegetable", "veggieServing"],
     ["Water Intake (cups)", "waterCup"],
     ["Protein Intake (grams)", "proteinGram"],
-    ["Lean Body Mass Ratio (NonFat Mass / Total Mass)", "lbm"]
+    ["Lean Body Mass Ratio (NonFat Mass / Total Mass)", "target_lbm"]
   ];
 
   changeToMonthly() {
@@ -112,6 +135,7 @@ class DayClickModal extends Component {
             <section className="modal-card-body">
               <Form
                 handleSubmit={this.props.submitFunction}
+                handleChange={this.props.changeFunction}
                 formElements={this.formElements}
               />
             </section>

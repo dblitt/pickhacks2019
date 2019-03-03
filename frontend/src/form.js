@@ -12,16 +12,6 @@ class Form extends Component {
     super(props);
 
     this.state = {};
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    var target = event.target;
-
-    this.setState({
-      [target.name]: target.value
-    });
   }
 
   render() {
@@ -29,14 +19,15 @@ class Form extends Component {
       <div>
         {this.props.formElements.map(elementData => {
           return (
-            <div className="field">
+            <div className="field" key={elementData[1]}>
               <label className="label">{elementData[0]}</label>
               <div className="control">
                 <input
                   className="input"
                   type="text"
                   name={elementData[1]}
-                  onChange={this.handleChange}
+                  onChange={this.props.handleChange}
+                  placeholder={elementData[1]}
                 />
               </div>
             </div>
