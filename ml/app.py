@@ -5,16 +5,17 @@ import numpy as np
 
 app = Flask(__name__)
 
-data = np.loadtxt(open("data.csv", "rb"), delimiter=",", skiprows=1)
+data = np.loadtxt(open("data_male_final.csv", "rb"), delimiter=",", skiprows=1)
+print(data[0])
 # make this the actual data
 
 clustered_data = {}
 clustered_lbms = []
 
-target_lbm = 10
+target_lbm = 0.75
 
 # change this to number of features
-number_of_features = 3
+number_of_features = 9
 
 
 @app.route('/predict_net_changes', methods=['POST'])
@@ -28,18 +29,18 @@ def handle_prediction():
 
     net_changes = fit_predict(most_recent_checkin_data)
 
-    counter = 0
-    labeled_net_changes = {}
+    # counter = 0
+    # labeled_net_changes = {}
 
-    copy_of_posted_checkin_data = posted_checkin_data
+    # copy_of_posted_checkin_data = posted_checkin_data
 
-    del copy_of_posted_checkin_data['lbm']
+    # del copy_of_posted_checkin_data['lbm']
 
-    for key in copy_of_posted_checkin_data:
-        labeled_net_changes[key] = net_changes[counter]
-        counter += 1
+    # for key in copy_of_posted_checkin_data:
+    #     labeled_net_changes[key] = net_changes[counter]
+    #     counter += 1
 
-    return jsonify(labeled_net_changes)
+    return jsonify(net_changes)
 
     # put all functions for prediction in here
 
@@ -57,7 +58,7 @@ def initalize_dbscan_classifier():
 
 def fit_predict(most_recent_checkin_data):
     for cluster_label in clusters:
-        clustered_data[cluster_label] = np.empty((0, number_of_features), int)
+        clustered_data[cluster_label] = np.empty((0, 9), int)
 
     for index, cluster_label in enumerate(clusters):
         clustered_data[cluster_label] = np.append(

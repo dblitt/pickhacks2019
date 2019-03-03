@@ -75,8 +75,15 @@ class DayClickModal extends Component {
   }
 
   formElements = [
-    ["Grams of Protein", "gramsofprotein"],
-    ["Upper Body Reps", "upperbodyreps"]
+    ["Amount of Sleep (hours)", "sleepHours"],
+    ["Servings of Dairy", "dairyServing"],
+    ["Time Working Out (hours)", "workoutHour"],
+    ["Max Weight Lifted (pounds)", "weightliftPound"],
+    ["Servings of Fruit", "fruitServing"],
+    ["Servings of Vegetable", "veggieServing"],
+    ["Water Intake (cups)", "waterCup"],
+    ["Protein Intake (grams)", "proteinGram"],
+    ["Lean Body Mass Ratio (NonFat Mass / Total Mass)", "lbm"]
   ];
 
   changeToMonthly() {
@@ -125,7 +132,10 @@ class DayClickModal extends Component {
 
 function Notification() {
   return (
-    <div className="notification is-success">
+    <div
+      className="notification is-success"
+      onClick={() => window.location.assign("/notifications")}
+    >
       A health suggestions report will soon be available for you. Check the
       notifications page.
     </div>
