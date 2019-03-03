@@ -12,8 +12,6 @@ print(data[0])
 clustered_data = {}
 clustered_lbms = []
 
-target_lbm = 0.75
-
 # change this to number of features
 number_of_features = 9
 
@@ -22,7 +20,8 @@ number_of_features = 9
 def handle_prediction():
 
     posted_checkin_data = request.get_json()
-    print(posted_checkin_data)
+    global target_lbm
+    target_lbm = posted_checkin_data['target_lbm']
 
     most_recent_checkin_data = [posted_checkin_data[key]
                                 for key in posted_checkin_data]
