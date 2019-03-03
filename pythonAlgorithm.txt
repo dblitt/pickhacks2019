@@ -1,9 +1,9 @@
-LBM             = 0.407(weight) + 0.267(height) - 19.2 (male)
-LBM             = 0.252(weight) + 0.473(height) - 48.3 (female)
-water intake    = weight/2 = oz per day
+LBM             = 0.407(weight(kg)) + 0.267(height(cm)) - 19.2 (male)
+LBM             = 0.252(weight(kg)) + 0.473(height(cm)) - 48.3 (female) Boer
+water intake    = weight(lbs)/2 = oz per day Univ. of Missouri System
 weight lifted   
 num of problems(cramps/fatigue)
-protein intake  = 1.1~1.8 * weight
+protein intake  = .5~.8 grams per 1lbs of weight (ACSM)
 
 
 Suggestions (intake ave of LBM, ave weight lifted, ave protien intake, new LBM, water intake, weights lifted, protein intake, ex.Problems):
