@@ -26,19 +26,42 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Dashboard</title>
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .column {
+          float: left;
+          padding: 5px;
+        }
+        
+        /* Clearfix (clear floats) */
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        </style>
   </head>
   <body>
     <section class="hero is-info">
       <div class="hero-body">
         <div class="container">
-          <div>
-            <h1 class="title">
-              SmarterNotHarder
-            </h1>
-            <h2 class="subtitle">
-              Improving Your Lifestyle
-            </h2>
+          <div class="row">
+            <div class="column">
+                <img src="SNH.png" alt="logo" style="width:150px;height:150px;">
+            </div>
+            <div class="column">
+                <h1 class="title">
+                  SmarterNotHarder
+                </h1>
+                <h2 class="subtitle">
+                  Improving Your Lifestyle
+                </h2>
+              </div>
           </div>
         </div>
       </div>
