@@ -12,6 +12,8 @@ print(data[0])
 clustered_data = {}
 clustered_lbms = []
 
+net_changes_predictions = []
+
 # change this to number of features
 number_of_features = 9
 
@@ -38,10 +40,19 @@ def handle_prediction():
     # for key in copy_of_posted_checkin_data:
     #     labeled_net_changes[key] = net_changes[counter]
     #     counter += 1
-
-    return jsonify(net_changes)
+    net_changes_predictions = net_changes
+    response = jsonify({'status': 'success'})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
     # put all functions for prediction in here
+
+
+@app.route('/get_net_changes')
+def serve_predictions():
+    response = jsonify(net_changes_predictions[0])
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 def initalize_dbscan_classifier():
