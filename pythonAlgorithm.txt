@@ -1,13 +1,18 @@
-weight height) = LBM
-water intake
-weight lifted
+LBM             = 0.407(weight) + 0.267(height) - 19.2 (male)
+LBM             = 0.252(weight) + 0.473(height) - 48.3 (female)
+water intake    = weight/2 = oz per day
+weight lifted   
 num of problems(cramps/fatigue)
-protein
+protein intake  = 1.1~1.8 * weight
 
 
 Suggestions (intake ave of LBM, ave weight lifted, ave protien intake, new LBM, water intake, weights lifted, protein intake, ex.Problems):
     compare aveLBM to newLBM:
         + => Good job
         - => check ave weight_lifted, protein, water, weight, etc. VS new weight_lifted, protein_intake, etc.
+        Problems > 0: check anyway
         
 WarnBefore (water intake,protein intake)
+    if new intakes > 2*ave => slow down warning
+    elif new intakes < ave/2 => intake more warning
+
