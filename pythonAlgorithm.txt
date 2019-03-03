@@ -1,0 +1,13 @@
+weight height) = LBM
+water intake
+weight lifted
+num of problems(cramps/fatigue)
+protein
+
+
+Suggestions (intake ave of LBM, ave weight lifted, ave protien intake, new LBM, water intake, weights lifted, protein intake, ex.Problems):
+    compare aveLBM to newLBM:
+        + => Good job
+        - => check ave weight_lifted, protein, water, weight, etc. VS new weight_lifted, protein_intake, etc.
+        
+WarnBefore (water intake,protein intake)
