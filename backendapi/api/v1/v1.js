@@ -135,9 +135,9 @@ router.post('/register', (req, res, next) => {
       loggedIn: true
     });
   } else {
-    if (req.body.email && req.body.firstName && req.body.lastName && req.body.password && req.body.passwordConfirm) {
+    if (req.body.email && req.body.firstName && req.body.lastName && req.body.sex && req.body.password && req.body.passwordConfirm) {
       // validation
-      if (validateEmail(req.body.email) && req.body.password === req.body.passwordConfirm) {
+      if (validateEmail(req.body.email) && req.body.password === req.body.passwordConfirm && (req.body.sex === 'male' || req.body.sex === 'female')) {
         // check if user with email exists
         User.find({
           email: req.body.email
@@ -168,7 +168,8 @@ router.post('/register', (req, res, next) => {
                   email: req.body.email,
                   password: hash,
                   firstName: req.body.firstName,
-                  lastName: req.body.lastName
+                  lastName: req.body.lastName,
+                  sex: req.body.sex
                   // student_id: req.body.studentId,
                   // grad_year: req.body.studentId.slice(0, 4),
                   // user_type: 'student'
@@ -181,12 +182,15 @@ router.post('/register', (req, res, next) => {
                   req.session.lastName = req.body.lastName;
                   // req.session.userType = 'student';
                   req.session.userID = doc._id;
+                  // console.log(req.session.userID)
+                  // console.log(typeof req.session.userID)
                   res.status(200).json({
                     success: true,
                     registered: true,
                     loggedIn: true
                     // redirectTo: studentLoginSuccessRedirect
                   });
+                  // console.log(doc)
                   // after the user is saved, send a slack invite to the email
                   // request.post({
                   //   url: 'https://sluhhackclub.slack.com/api/users.admin.invite',
@@ -274,6 +278,34 @@ const dailyCheckInRequiredBody = [
   {
     name: 'hoursSleep',
     type: 'number'
+  },
+  {
+    name: 'servingsFruit',
+    type: 'number'
+  },
+  {
+    name: 'servingsVegetables',
+    type: 'number'
+  },
+  {
+    name: 'servingsDairy',
+    type: 'number'
+  },
+  {
+    name: 'glassesWater',
+    type: 'number'
+  },
+  {
+    name: 'gramsProtein',
+    type: 'number'
+  },
+  {
+    name: 'hoursWorkedOut',
+    type: 'number'
+  },
+  {
+    name: 'weightLiftedInPounds',
+    type: 'number'
   }
 ];
 
@@ -310,7 +342,14 @@ router.post('/dailycheckin', (req, res, next) => {
                 weightInPounds: req.body.weightInPounds,
                 heightInInches: req.body.heightInInches,
                 hoursSleep: req.body.hoursSleep,
-                age: req.body.age
+                age: req.body.age,
+                servingsFruit: req.body.servingsFruit,
+                servingsVegetables: req.body.servingsVegetables,
+                servingsDairy: req.body.servingsDairy,
+                glassesWater: req.body.glassesWater,
+                gramsProtein: req.body.gramsProtein,
+                hoursWorkedOut: req.body.hoursWorkedOut,
+                weightLiftedInPounds: req.body.weightLiftedInPounds
               });
               newDocument.save((err, checkIn) => {
                 if (err) {

@@ -1,0 +1,35 @@
+POST /api/v1/auth
+JSON object with email and password
+If {success: true, loggedIn: false}, there was a bad login attempt
+Sets the session to be logged in
+
+POST /api/v1/register
+Send JSON of {email: 'my@email.com', firstName: 'Bob', lastName: 'Smith', sex: 'male/female' password: 'hunter2', passwordConfirm: 'hunter2'}
+Check for {success: true, loggedIn: true} and if its not that, something went wrong
+Creates user and sets session to be logged in
+
+GET /api/v1/logout
+Returns {}
+Logs out user
+
+POST /api/v1/dailycheckin
+Send
+{
+  date: 'in ISO 8601',
+  age: 'number in years',
+  weightInPounds: 'number',
+  heightInInches: 'number',
+  hoursSleep: 'number',
+  servingsFruit: 'number',
+  servingsVegetables: 'number',
+  servingsDairy: 'number',
+  glassesWater: 'number',
+  gramsProtein: 'number',
+  minutesWorkedOut: 'number',
+  weightLiftedInPounds: 'number'
+}
+Must be logged in or it will return HTTP 401
+Response
+{
+
+}
