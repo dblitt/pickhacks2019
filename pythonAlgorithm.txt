@@ -1,4 +1,4 @@
-LBM             = 0.407(weight(kg)) + 0.267(height(cm)) - 19.2 (male)
+LBM             = 0.407(weight(kg)) + 0.267(height(cm)) - 19.2 (male)   Boer
 LBM             = 0.252(weight(kg)) + 0.473(height(cm)) - 48.3 (female) Boer
 water intake    = weight(lbs)/2 = oz per day Univ. of Missouri System
 weight lifted   
